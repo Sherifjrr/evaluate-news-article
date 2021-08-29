@@ -1,4 +1,4 @@
-export default function check_URL(str) {
+export function check_URL(str) {
   const pattern = new RegExp(
     "^(https?:\\/\\/)?" +
       "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" +

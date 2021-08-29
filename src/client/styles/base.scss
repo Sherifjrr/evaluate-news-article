@@ -6,6 +6,17 @@ body {
 
 main {
   flex: 2;
+  padding: 10rem;
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 20rem;
+    p {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 section {

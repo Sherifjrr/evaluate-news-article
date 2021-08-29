@@ -27,28 +27,10 @@ app.get("/", function (req, res) {
 app.post("/add-url", async (req, res) => {
   const { articleUrl } = req.body;
   const articleCheck = `${apiURL}?key=${apiKey}$url=${articleUrl}$lang=en`;
-  try {
-    const {
-      data: {
-        sentence_list,
-        score_tag,
-        agreement,
-        subjectivity,
-        confidence,
-        irony,
-      },
-    } = await fetch(articleCheck);
-    res.send({
-      text: sentence_list[0].text || "",
-      score_tag: score_tag,
-      agreement: agreement,
-      subjectivity: subjectivity,
-      confidence: confidence,
-      irony: irony,
-    });
-  } catch (error) {
-    console.log(error.message);
-  }
+  fetch(articleCheck)
+    .then((response) => response.json())
+    .then((data) => res.send(data))
+    .catch((error) => console.log(error));
 });
 
 app.get("/test", function (req, res) {

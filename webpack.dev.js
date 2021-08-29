@@ -1,3 +1,5 @@
+const path = require("path");
+const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
@@ -9,12 +11,10 @@ module.exports = {
     library: "Client",
   },
   mode: "development",
-  devtool: "source-map",
-  stats: "minimal",
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: "/.js$/",
         exclude: /node_modules/,
         loader: "babel-loader",
       },
