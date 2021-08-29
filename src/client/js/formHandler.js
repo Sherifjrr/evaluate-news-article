@@ -1,5 +1,4 @@
 import { check_URL } from "./checkURL";
-const fetch = require("node-fetch");
 
 const pushData = async (url = "", data = {}) => {
   const response = await fetch(url, {
